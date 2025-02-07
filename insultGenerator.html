@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shakespearean Insult Generator</h1>
+    <p>Click the button to generate a Shakespearean insult</p>
+
+    <!-- Button to generate random text -->
+    <button onclick="generateText()">Generate Phrase</button>
+
+    <!-- Output area for the generated phrase -->
+    <div class="output" id="output"></div>
+
+    <script>
+        // Define three separate arrays (tables) of terms
+        const table1 = ['Apish','Artless','Beslubbering','Calumniating','Cautelous','Churlish','Coldblooded','Concupiscible','Covetous','Crudy','Cuckoldly','Deceptious','Degenerate','Fancinerious','Fawning','Finical','Fusty','Goatish','Gorbellied','Greasy','Heinous','Incontinent','Inexecrable','Insolent','Lecherous','Lisping','Loathly','Lubberly','Lumpish','Mammering','Musty','Naughty','Obscene','Overgorged','Panderly','Pestiferous','Plumpy','Puking','Rascally','Reeky','Sanctimonious','Sickly','Slobbery','Sneaping','Spongy','Stinking','Superserviceable','Thrasonical','Unhandsome','Unwiped','Viperous','Wanton','Warped','Witless'];
+        const table2 = ['Bald-pated','Barren-spirited','Beast-eating','Beef-witted','Boiled-brains','Clay-brained','Dirt-rotten','Dizzy-eyed','Dull-brained','Eye-offending','Fat-kidneyed','Flap-eared','Foul-mouthed','Half-blooded','Hard-haired','Hell-governed','Hollow-eyed','Hook-nosed','Ill-tempered','Knotty-pated','Leaden-footed','Leptus-leering','Lily-livered','Logger-headed','Lust-breathed','Motley-minded','Mouse-eaten','Muddy-mettled','Nook-shotten','One-trunk-inheriting','Pale-hearted','Pigeon-livered','Puke-stocking','Puppy-headed','Rank-scented','Rug-headed','Rump-fed','Self-glorious','Senseless-obstinate','Sheep-biting','Shrill-tongued','Snail-paced','Sodden-witted','Stretch-mouthed','Stubborn-hard','Swag-bellied','Tardy-gaited','Thick-eyed','Three-suited','Tripe-visaged','Under-honest','Uneducated','Useless','White-livered','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish','Apish',];
+        const table3 = ['Abomination','Arch-villain','Baggage','Bed-presser','Blockhead','Braggart','Bugbear',"Bull's pizzle'",'Codpiece','Capocchia','Cornuto','Costermonger','Cot-quean','Coxcomb','Cozener','Dissembler','Dullard','Dunghill','Fashion-monger','Fleshmonger','Footlicker','Fustilarian','Geck','Giglet','Horn-beast','Horse-back-breaker','Idiot-worshiper','Jack-a-nape','Lewdster','Malignancy','Malmsey-butt','Measle','Miscreant','Mushrump','Ox-head','Parasite','Pig-nut','Pin-buttock','Potato finger','Princox','Purpose-changer','Quatch-buttock','Rabbit-sucker','Rampallian','Ratcatcher','Ratsbane','Renegatho','Scum','Scut','Starve-lackey','Stock-fish','Ticklebrain','Under-skinker','Villiago'];
+
+        // Function to generate a random phrase
+        function generateText() {
+            // Pick a random term from each table
+            const term1 = table1[Math.floor(Math.random() * table1.length)];
+            const term2 = table2[Math.floor(Math.random() * table2.length)];
+            const term3 = table3[Math.floor(Math.random() * table3.length)];
+
+            // Combine the terms into a phrase and display it
+            const phrase = `${term1} ${term2} ${term3}`;
+            document.getElementById('output').textContent = phrase;
+        }
+    </script>
+</body>
+</html>
